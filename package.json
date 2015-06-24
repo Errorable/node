@@ -1,38 +1,48 @@
 {
   "name": "web-errors",
-  "version": "0.0.13",
-  "description": "Standard errors for web programs or express programs",
-  "main": "web-errors.js",
-  "scripts": {
-    "test": "mocha --reporter spec",
-    "coveralls": "istanbul cover mocha --report lcovonly -- -R spec && cat ./coverage/lcov.info | coveralls && rm -rf ./coverage"
+  "version": "0.0.0",
+  "description": "web-errors for all restful apis",
+  "homepage": "https://github.com/Web-Errors/node",
+  "author": {
+    "name": "calidion",
+    "email": "calidion@gmail.com",
+    "url": "blog.3gcnbeta.com"
   },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/calidion/web-errors.git"
-  },
-  "keywords": [
-    "web",
-    "error",
-    "i18n",
-    "express",
-    "request",
-    "standard",
-    "web-errors"
-  ],
-  "author": "calidion",
+  "repository": "calidion/web-errors",
   "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/calidion/web-errors/issues"
-  },
-  "homepage": "https://github.com/calidion/web-errors",
+  "files": [
+    "index.js",
+    "lib"
+  ],
+  "keywords": [
+    "web-errors",
+    "web",
+    "errors",
+    "json",
+    "api",
+    "restful",
+    "i18n",
+    "standard",
+    "express",
+    "sailsjs"
+  ],
+  "dependencies": {},
   "devDependencies": {
-    "contextify": "latest",
-    "coveralls": "latest",
-    "istanbul": "latest",
-    "jshint": "latest",
-    "mocha": "latest",
-    "uglify-js": "latest",
-    "validator": "^3.27.0"
+    "browserify": "^9.0.3",
+    "grunt-browserify": "^3.8.0",
+    "grunt-cli": "^0.1.13",
+    "grunt-contrib-jshint": "^0.11.0",
+    "grunt-contrib-nodeunit": "^0.4.1",
+    "grunt-contrib-uglify": "^0.9.1",
+    "grunt-contrib-watch": "^0.6.1",
+    "grunt-mocha-cli": "^1.12.0",
+    "jshint-stylish": "^1.0.1",
+    "load-grunt-tasks": "^3.1.0",
+    "time-grunt": "^1.1.0",
+    "validator": "^3.40.1"
+  },
+  "scripts": {
+    "test": "grunt",
+    "browser": "browserify index.js > browser.js"
   }
 }

@@ -1,8 +1,8 @@
-var assert = require('assert')
-  , webErrors = require('../web-errors'), validator = require('validator');
+var assert = require('assert'),
+  webErrors = require('../index'),
+  validator = require('validator');
 
 describe('web Error Test', function () {
-  'use strict';
   it('should have basic info', function () {
     assert.equal(typeof webErrors.locale !== 'undefined', true);
     assert.equal(webErrors.add instanceof Function, true);
@@ -37,13 +37,14 @@ describe('web Error Test', function () {
   it('should have i18n ability', function () {
     var locale = 'zh-CN';
     var lang = webErrors.lang;
-    assert(lang('Success!', 'zh-CN') === '成功!', true);
+    assert(lang('SUCCESS', 'zh-CN') === '成功!', true);
+
 
     var localErrors = webErrors.setLocale(locale);
-    var enErrors = webErrors.setLocale('en');
+    var enErrors = webErrors.setLocale('en-US');
     for (var key in enErrors) {
       assert(localErrors[key].code === enErrors[key].code, true);
-      assert(localErrors[key].message === lang(enErrors[key].message, locale), true);
+      assert(localErrors[key].message === lang(key, locale), true);
     }
   });
 
@@ -83,21 +84,24 @@ describe('web Error Test', function () {
 
   //
   it('should be able to be customized by locale', function () {
-    webErrors.setLocale('en');
+    webErrors.setLocale('en-US');
     assert.equal(webErrors.updateLocaleItem(), false);
-    assert.equal(webErrors.updateLocaleItem(customMessage), false);
-    assert.equal(webErrors.updateLocaleItem(customMessage, customLocaleMessage), false);
-    assert.equal(webErrors.updateLocaleItem(customMessage, customLocaleMessage, customLocale), true);
+    assert.equal(webErrors.updateLocaleItem(customKey), false);
+    assert.equal(webErrors.updateLocaleItem(customKey, customLocaleMessage), false);
+    assert.equal(webErrors.updateLocaleItem(customKey, customLocaleMessage, customLocale), true);
     assert.equal(webErrors.errors[customKey].message !== customLocaleMessage, true);
     webErrors.setLocale(customLocale);
-    assert.equal(webErrors.updateLocaleItem(customMessage, customLocaleMessage, customLocale), true);
+    assert.equal(webErrors.updateLocaleItem(customKey, customLocaleMessage, customLocale), true);
+
     assert.equal(webErrors.errors[customKey].message === customLocaleMessage, true);
   });
 
   it('should have equivalent translations', function () {
-    var enErrors = webErrors.setLocale('en');
+    var enErrors = webErrors.setLocale('en-US');
     for (var locale in webErrors.locales) {
-      if (locale === 'en') continue;
+      if (locale === 'en-US') {
+        continue;
+      }
 
       for (var k in enErrors) {
         assert.equal(true, !!webErrors.locales[locale][enErrors[k].message]);
@@ -107,7 +111,7 @@ describe('web Error Test', function () {
 
 
   it('should password all errors', function () {
-    var errors = webErrors.errors;
+    var errors = webErrors.setLocale('en-US');
     var errorList = [
       //Generic errors
 
@@ -153,6 +157,11 @@ describe('web Error Test', function () {
       assert((errors[v].code === errors.SUCCESS.code) || !!errors[v].code);
       assert(typeof errors[v].message === 'string' && (errors[v].message.length > 0));
 
+    });
+    errors = webErrors.setLocale('zh-CN');
+    errorList.forEach(function (v) {
+      assert((errors[v].code === errors.SUCCESS.code) || !!errors[v].code);
+      assert(typeof errors[v].message === 'string' && (errors[v].message.length > 0));
     });
   });
 

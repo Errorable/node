@@ -1,7 +1,7 @@
 {
   "name": "web-errors",
-  "main": "web-errors.js",
-  "version": "0.0.2",
+  "main": "dist/web-errors.js",
+  "version": "0.0.3",
   "homepage": "https://github.com/calidion/web-errors",
   "description": "web common errors to be standardized",
   "moduleType": [
