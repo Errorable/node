@@ -13,4 +13,8 @@
  */
 
 
-module.exports = require('./lib/index');
+var webErrors = require('./lib/index');
+
+global.webErrors = webErrors;
+
+module.exports = webErrors;
