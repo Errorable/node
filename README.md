@@ -5,21 +5,27 @@
 
 ## Install
 
+> nodejs/iojs
 ```sh
 $ npm install --save web-errors
 ```
-
+> bower
+```sh
+$ bower install --save web-errors
+```
 
 ## Usage
 
+> nodejs/iojs
 ```js
 var errors = require('web-errors').errors;
 
 ```
 
-```sh
-# creates a browser.js
-$ npm run browser
+> browser
+
+```html
+<script src="bower_components/web-errors/dist/web-errors.js"></script>
 ```
 
 ## Errors
