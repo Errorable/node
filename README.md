@@ -113,7 +113,7 @@ MIT © [calidion](blog.3gcnbeta.com)
 
 [npm-image]: https://badge.fury.io/js/web-errors.svg
 [npm-url]: https://npmjs.org/package/web-errors
-[travis-image]: https://travis-ci.org/JSSDKCN/web-errors.svg?branch=master
-[travis-url]: https://travis-ci.org/JSSDKCN/web-errors
-[daviddm-image]: https://david-dm.org/JSSDKCN/web-errors.svg?theme=shields.io
-[daviddm-url]: https://david-dm.org/JSSDKCN/web-errors
+[travis-image]: https://travis-ci.org/Web-Errors/node.svg?branch=master
+[travis-url]: https://travis-ci.org/Web-Errors/node
+[daviddm-image]: https://david-dm.org/Web-Errors/node.svg?theme=shields.io
+[daviddm-url]: https://david-dm.org/Web-Errors/node
