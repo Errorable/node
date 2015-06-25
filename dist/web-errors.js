@@ -66,6 +66,44 @@ var types = require('./types');
 var events = require('./events');
 var errors = {};
 
+//errors predefined for code completion.
+
+errors.SUCCESS = {};
+errors.FAILURE = {};
+errors.FAILED = {};
+errors.ERROR = {};
+errors.NOT_FOUND = {};
+errors.EXISTED = {};
+errors.NOT_SPECIFIED = {};
+errors.NOT_LOGIN = {};
+errors.REQUIRED = {};
+errors.UNKNOWN_ERROR = {};
+errors.USER_EXISTED = {};
+errors.USER_NOT_FOUND = {};
+errors.USER_NOT_LOGIN = {};
+errors.USERNAME_EXISTED = {};
+errors.DATABASE_ERROR = {};
+errors.PASSWORD_ERROR = {};
+errors.PASSWORD_NOT_SPECIFIED = {};
+errors.FILE_NOT_FOUND = {};
+errors.ADMIN_EXISTED = {};
+errors.ADMINISTRATOR_EXISTED = {};
+errors.ADMIN_NOT_FOUND = {};
+errors.ADMINISTRATOR_NOT_FOUND = {};
+errors.ADMIN_NOT_LOGIN = {};
+errors.ADMINISTRATOR_NOT_LOGIN = {};
+errors.MERCHANT_NOT_LOGIN = {};
+errors.UPDATE_FAILED = {};
+errors.INPUT_INVALID = {};
+errors.NUMERIC_REQUIRED = {};
+errors.NAME_NOT_SPECIFIED = {};
+errors.EMAIL_NOT_SPECIFIED = {};
+errors.EMAIL_EXISTED = {};
+errors.CATEGORY_NOT_FOUND = {};
+errors.PHONE_EXISTED = {};
+errors.NETWORK_ERROR = {};
+
+
 
 //Basic/generic errors
 
@@ -84,7 +122,6 @@ util.define(errors, 'UNKNOWN_ERROR', util.make(entities.UNKNOWN, 0, events.NONE,
 //User related errors
 util.define(errors, 'USER_EXISTED', util.make(entities.USER, 0, events.NONE, types.EXISTED));
 util.define(errors, 'USER_NOT_FOUND', util.make(entities.USER, 0, events.NONE, types.NOT_FOUND));
-util.define(errors, 'USER_NOT_LOGIN', util.make(entities.USER, 0, events.NONE, types.NOT_LOGIN));
 util.define(errors, 'USER_NOT_LOGIN', util.make(entities.USER, 0, events.NONE, types.NOT_LOGIN));
 
 //User name related errors
@@ -407,13 +444,9 @@ module.exports = types;
 var defaultLang = 'en-US';
 var util = {
   define: function(errors, key, value) {
-    if (errors[key]) {
-      return false;
-    } else {
       errors[key] = {
         code: value
-      }
-    }
+      };
   },
   defineString: function(locale, key, value) {
     if (locale[key]) {
