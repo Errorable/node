@@ -19,11 +19,9 @@ $ bower install --save web-errors
 > nodejs/iojs
 ```js
 var errors = require('web-errors').errors;
-
 ```
 
 > browser
-
 ```html
 <script src="bower_components/web-errors/dist/web-errors.js"></script>
 ```
