@@ -25,6 +25,8 @@ $ npm run browser
 ## Errors
 
 
+```js
+
 //Basic/generic errors
 
 errors.SUCCESS
@@ -101,7 +103,7 @@ errors.PHONE_EXISTED
 //Network errors
 errors.NETWORK_ERROR
 
-
+```
 
 
 
