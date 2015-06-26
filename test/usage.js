@@ -134,6 +134,7 @@ describe('web Error Test', function () {
       'USER_NOT_FOUND',
       'USER_NOT_LOGIN',
       'USERNAME_EXISTED',
+      'USER_NAME_EXISTED',
 
       'FILE_NOT_FOUND',
 
@@ -151,7 +152,9 @@ describe('web Error Test', function () {
       'CATEGORY_NOT_FOUND',
       'EMAIL_EXISTED',
       'PHONE_EXISTED',
-      'NETWORK_ERROR'
+      'NETWORK_ERROR',
+      'APP_ID_ERROR',
+      'APPLICATION_ID_ERROR'
     ];
     errorList.forEach(function (v) {
       assert((errors[v].code === errors.SUCCESS.code) || !!errors[v].code);

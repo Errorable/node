@@ -52,6 +52,8 @@ errors.USER_NOT_LOGIN
 
 //User name related errors
 errors.USERNAME_EXISTED
+errors.USER_NAME_EXISTED
+
 
 //Database errros
 errors.DATABASE_ERROR
