@@ -154,7 +154,8 @@ describe('web Error Test', function () {
       'PHONE_EXISTED',
       'NETWORK_ERROR',
       'APP_ID_ERROR',
-      'APPLICATION_ID_ERROR'
+      'APPLICATION_ID_ERROR',
+      'SIGNATURE_NOT_MATCH'
     ];
     errorList.forEach(function (v) {
       assert((errors[v].code === errors.SUCCESS.code) || !!errors[v].code);

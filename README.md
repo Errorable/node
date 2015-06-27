@@ -109,6 +109,15 @@ errors.PHONE_EXISTED
 //Network errors
 errors.NETWORK_ERROR
 
+
+//Weixin related errors
+
+errors.APP_ID_ERROR
+errors.APPLICATION_ID_ERROR
+
+
+errors.SIGNATURE_NOT_MATCH
+
 ```
 
 
