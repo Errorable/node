@@ -1,0 +1,23 @@
+{
+  "NONE": 0,
+  "SYSTEM": 0,
+  "GENERIC": 0,
+  "UNKNOWN": 1,
+  "USER": 2,
+  "DATABASE": 3,
+  "IMAGE": 4,
+  "EMAIL": 5,
+  "FILE": 6,
+  "ADMIN": 7,
+  "ADMINISTRATOR": 7,
+  "PASSWORD": 8,
+  "INPUT": 9,
+  "NUMERIC": 10,
+  "CATEGORY": 11,
+  "NAME": 12,
+  "PHONE": 13,
+  "MERCHANT": 14,
+  "NETWORK": 15,
+  "APPLICATION": 16,
+  "SIGNATURE": 17
+}

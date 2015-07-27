@@ -1,15 +1,19 @@
 #  [![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Dependency Status][daviddm-image]][daviddm-url]
 
-> web-errors for all restful apis
+
+### Web errors is an easy way to define and use errors for restful apis.
 
 
 ## Install
 
 > nodejs/iojs
+
 ```sh
 $ npm install --save web-errors
 ```
+
 > bower
+
 ```sh
 $ bower install --save web-errors
 ```
@@ -17,107 +21,44 @@ $ bower install --save web-errors
 ## Usage
 
 > nodejs/iojs
+
 ```js
 var errors = require('web-errors').errors;
 ```
 
 > browser
+
 ```html
 <script src="bower_components/web-errors/dist/web-errors.js"></script>
 ```
 
-## Errors
+## How to define errors
+
+[example](lib/data)
+
+
+
+### Usage:
 
 
 ```js
+var webErrors = require('web-errors');
 
-//Basic/generic errors
+var conf = {
+  data: {
+    entities: '../lib/data/entities',
+    properties: '../lib/data/properties',
+    types: '../lib/data/types',
+    events: '../lib/data/events',
+    errors: '../lib/data/errors'
+  },
+  i18n: {
+    "zh-CN": '../lib/data/i18n/zh-CN',
+    "en-US": '../lib/data/i18n/en-US'
+  }
+};
 
-errors.SUCCESS
-errors.FAILURE
-errors.FAILED
-errors.ERROR
-errors.NOT_FOUND
-errors.EXISTED
-errors.NOT_SPECIFIED
-errors.NOT_LOGIN
-errors.REQUIRED
-
-errors.UNKNOWN_ERROR
-
-//User related errors
-errors.USER_EXISTED
-errors.USER_NOT_FOUND
-errors.USER_NOT_LOGIN
-
-//User name related errors
-errors.USERNAME_EXISTED
-errors.USER_NAME_EXISTED
-
-
-//Database errros
-errors.DATABASE_ERROR
-
-
-//Password related errors
-errors.PASSWORD_ERROR
-errors.PASSWORD_NOT_SPECIFIED
-
-
-
-
-//File related errors
-errors.FILE_NOT_FOUND
-
-
-//Administrator related errors
-
-errors.ADMIN_EXISTED
-errors.ADMINISTRATOR_EXISTED
-
-errors.ADMIN_NOT_FOUND
-errors.ADMINISTRATOR_NOT_FOUND
-
-
-errors.ADMIN_NOT_LOGIN
-errors.ADMINISTRATOR_NOT_LOGIN
-
-
-//Merchant errors
-errors.MERCHANT_NOT_LOGIN
-
-
-//Action errors
-errors.UPDATE_FAILED
-errors.INPUT_INVALID
-errors.NUMERIC_REQUIRED
-errors.NAME_NOT_SPECIFIED
-
-
-//Email related errors
-errors.EMAIL_NOT_SPECIFIED
-errors.EMAIL_EXISTED
-
-//Category related errors
-errors.CATEGORY_NOT_FOUND
-
-
-//Phone related errors
-errors.PHONE_EXISTED
-
-
-//Network errors
-errors.NETWORK_ERROR
-
-
-//Weixin related errors
-
-errors.APP_ID_ERROR
-errors.APPLICATION_ID_ERROR
-
-
-errors.SIGNATURE_NOT_MATCH
-
+webErrors.set(conf.data, config.i18n);
 ```
 
 

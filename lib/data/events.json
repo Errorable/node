@@ -1,0 +1,13 @@
+{
+  "NONE": 0,
+  "REGISTER": 1,
+  "LOGIN": 2,
+  "LOGOUT": 3,
+  "CREATE": 4,
+  "RETRIEVE": 5,
+  "READ": 5,
+  "GET": 5,
+  "UPDATE": 6,
+  "REMOVE": 7,
+  "DELETE": 7
+}

@@ -1,0 +1,17 @@
+{
+  "SUCCEEDED": 0,
+  "SUCCESS": 0,
+  "FAILURE": 1,
+  "FAILED": 1,
+  "ERROR": 1,
+  "INVALID": 2,
+  "MISMATCH": 3,
+  "REQUIRED": 4,
+  "NOT_FOUND": 5,
+  "EXISTED": 6,
+  "NOT_LOGIN": 7,
+  "EXPIRED": 8,
+  "BLOCKED": 9,
+  "EXCEEDED": 10,
+  "NOT_SPECIFIED": 11
+}

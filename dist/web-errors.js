@@ -22,340 +22,243 @@ global.webErrors = webErrors;
 module.exports = webErrors;
 
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{"./lib/index":8}],2:[function(require,module,exports){
-/**
- *  Error entities that throw or generate the errors
- *
- *  The most commonly used entities are listed
- *
- *  Total 8 bits
- *
- *  Users have the ability to extend the entities for their own projects
- *
- */
+},{"./lib/index":11}],2:[function(require,module,exports){
 
-  //Put all common entities here
-
-var entities = {
-  SYSTEM: 0,
-  GENERIC: 0,
-  UNKNOWN: 1,
-  USER: 2,
-  DATABASE: 3,
-  IMAGE: 4,
-  EMAIL: 5,
-  FILE: 6,
-  ADMIN: 7,
-  ADMINISTRATOR: 7,
-
-  PASSWORD: 8,
-  INPUT: 9,
-  NUMERIC: 10,
-  CATEGORY: 11,
-  NAME: 12,
-  PHONE: 13,
-  MERCHANT: 14,
-  NETWORK: 15
-};
-module.exports = entities;
+module.exports = {
+  locale: "zh-CN",
+  data: {
+    entities: './data/entities',
+    properties: './data/properties',
+    types: './data/types',
+    events: './data/events',
+    errors: './data/errors'
+  },
+  i18n: {
+    "zh-CN": './data/i18n/zh-CN',
+    "en-US": './data/i18n/en-US'
+  },
+  set: function(data, i18n) {
+    this.data = data || this.data;
+    this.i18n = i18n || this.i18n;
+  }
+}
 
 },{}],3:[function(require,module,exports){
-var util = require("./util");
-var entities = require('./entities');
-var types = require('./types');
-var events = require('./events');
-var errors = {};
+module.exports={
+  "NONE": 0,
+  "SYSTEM": 0,
+  "GENERIC": 0,
+  "UNKNOWN": 1,
+  "USER": 2,
+  "DATABASE": 3,
+  "IMAGE": 4,
+  "EMAIL": 5,
+  "FILE": 6,
+  "ADMIN": 7,
+  "ADMINISTRATOR": 7,
+  "PASSWORD": 8,
+  "INPUT": 9,
+  "NUMERIC": 10,
+  "CATEGORY": 11,
+  "NAME": 12,
+  "PHONE": 13,
+  "MERCHANT": 14,
+  "NETWORK": 15,
+  "APPLICATION": 16,
+  "SIGNATURE": 17
+}
 
-//errors predefined for code completion.
-
-errors.SUCCESS = {};
-errors.FAILURE = {};
-errors.FAILED = {};
-errors.ERROR = {};
-errors.NOT_FOUND = {};
-errors.EXISTED = {};
-errors.NOT_SPECIFIED = {};
-errors.NOT_LOGIN = {};
-errors.REQUIRED = {};
-errors.UNKNOWN_ERROR = {};
-errors.USER_EXISTED = {};
-errors.USER_NOT_FOUND = {};
-errors.USER_NOT_LOGIN = {};
-errors.USERNAME_EXISTED = {};
-errors.DATABASE_ERROR = {};
-errors.PASSWORD_ERROR = {};
-errors.PASSWORD_NOT_SPECIFIED = {};
-errors.FILE_NOT_FOUND = {};
-errors.ADMIN_EXISTED = {};
-errors.ADMINISTRATOR_EXISTED = {};
-errors.ADMIN_NOT_FOUND = {};
-errors.ADMINISTRATOR_NOT_FOUND = {};
-errors.ADMIN_NOT_LOGIN = {};
-errors.ADMINISTRATOR_NOT_LOGIN = {};
-errors.MERCHANT_NOT_LOGIN = {};
-errors.UPDATE_FAILED = {};
-errors.INPUT_INVALID = {};
-errors.NUMERIC_REQUIRED = {};
-errors.NAME_NOT_SPECIFIED = {};
-errors.EMAIL_NOT_SPECIFIED = {};
-errors.EMAIL_EXISTED = {};
-errors.CATEGORY_NOT_FOUND = {};
-errors.PHONE_EXISTED = {};
-errors.NETWORK_ERROR = {};
-
-
-
-//Basic/generic errors
-
-util.define(errors, 'SUCCESS', util.make(entities.GENERIC, 0, events.NONE, types.SUCCESS));
-util.define(errors, 'FAILURE', util.make(entities.GENERIC, 0, events.NONE, types.FAILURE));
-util.define(errors, 'FAILED', util.make(entities.GENERIC, 0, events.NONE, types.FAILED));
-util.define(errors, 'ERROR', util.make(entities.GENERIC, 0, events.NONE, types.ERROR));
-util.define(errors, 'NOT_FOUND', util.make(entities.GENERIC, 0, events.NONE, types.NOT_FOUND));
-util.define(errors, 'EXISTED', util.make(entities.GENERIC, 0, events.NONE, types.EXISTED));
-util.define(errors, 'NOT_SPECIFIED', util.make(entities.GENERIC, 0, events.NONE, types.NOT_SPECIFIED));
-util.define(errors, 'NOT_LOGIN', util.make(entities.GENERIC, 0, events.NONE, types.NOT_LOGIN));
-util.define(errors, 'REQUIRED', util.make(entities.GENERIC, 0, events.NONE, types.REQUIRED));
-
-util.define(errors, 'UNKNOWN_ERROR', util.make(entities.UNKNOWN, 0, events.NONE, types.ERROR));
-
-//User related errors
-util.define(errors, 'USER_EXISTED', util.make(entities.USER, 0, events.NONE, types.EXISTED));
-util.define(errors, 'USER_NOT_FOUND', util.make(entities.USER, 0, events.NONE, types.NOT_FOUND));
-util.define(errors, 'USER_NOT_LOGIN', util.make(entities.USER, 0, events.NONE, types.NOT_LOGIN));
-
-//User name related errors
-util.define(errors, 'USERNAME_EXISTED', util.make(entities.USER, entities.NAME, events.NONE, types.EXISTED));
-
-//Database errros
-util.define(errors, 'DATABASE_ERROR', util.make(entities.DATABASE, 0, events.NONE, types.ERROR));
-
-
-//Password related errors
-util.define(errors, 'PASSWORD_ERROR', util.make(entities.PASSWORD, 0, events.NONE, types.ERROR));
-util.define(errors, 'PASSWORD_NOT_SPECIFIED', util.make(entities.PASSWORD, 0, events.NONE, types.NOT_SPECIFIED));
-
-
-
-
-//File related errors
-util.define(errors, 'FILE_NOT_FOUND', util.make(entities.FILE, 0, events.NONE, types.NOT_FOUND));
-
-
-//Administrator related errors
-
-util.define(errors, 'ADMIN_EXISTED', util.make(entities.ADMINISTRATOR, 0, events.NONE, types.EXISTED));
-util.define(errors, 'ADMINISTRATOR_EXISTED', util.make(entities.ADMINISTRATOR, 0, events.NONE, types.EXISTED));
-
-util.define(errors, 'ADMIN_NOT_FOUND', util.make(entities.ADMINISTRATOR, 0, events.NONE, types.NOT_FOUND));
-util.define(errors, 'ADMINISTRATOR_NOT_FOUND', util.make(entities.ADMINISTRATOR, 0, events.NONE, types.NOT_FOUND));
-
-
-util.define(errors, 'ADMIN_NOT_LOGIN', util.make(entities.ADMINISTRATOR, 0, events.NONE, types.NOT_LOGIN));
-util.define(errors, 'ADMINISTRATOR_NOT_LOGIN', util.make(entities.ADMINISTRATOR, 0, events.NONE, types.NOT_LOGIN));
-
-
-//Merchant errors
-util.define(errors, 'MERCHANT_NOT_LOGIN', util.make(entities.MERCHANT, 0, events.NONE, types.NOT_LOGIN));
-
-
-//Action errors
-util.define(errors, 'UPDATE_FAILED', util.make(entities.GENERIC, 0, events.UPDATE, types.FAILED));
-
-util.define(errors, 'INPUT_INVALID', util.make(entities.GENERIC, 0, events.INPUT, types.INVALID));
-
-util.define(errors, 'NUMERIC_REQUIRED', util.make(entities.NUMERIC, 0, events.NONE, types.REQUIRED));
-
-util.define(errors, 'NAME_NOT_SPECIFIED', util.make(entities.NAME, 0, events.NONE, types.NOT_SPECIFIED));
-
-
-//Email related errors
-util.define(errors, 'EMAIL_NOT_SPECIFIED', util.make(entities.EMAIL, 0, events.NONE, types.NOT_SPECIFIED));
-util.define(errors, 'EMAIL_EXISTED', util.make(entities.EMAIL, 0, events.NONE, types.EXISTED));
-
-//Category related errors
-util.define(errors, 'CATEGORY_NOT_FOUND', util.make(entities.CATEGORY, 0, events.NONE, types.NOT_FOUND));
-
-
-//Phone related errors
-util.define(errors, 'PHONE_EXISTED', util.make(entities.PHONE, 0, events.NONE, types.EXISTED));
-
-
-//Network errors
-util.define(errors, 'NETWORK_ERROR', util.make(entities.NETWORK, 0, events.NONE, types.ERROR));
-
-
-module.exports = errors;
-
-},{"./entities":2,"./events":4,"./types":9,"./util":10}],4:[function(require,module,exports){
-/**
- *  Error events that throw or generate the errors
- *
- *  The most commonly used events are listed
- *
- *  Total 8 bits
- *
- *  Users have the ability to extend the events for their own projects
- *
- */
-
-var events = {
-  NONE: 0,
-  REGISTER: 1,
-  LOGIN: 2,
-  LOGOUT: 3,
-
-  CREATE: 4,
-
-  //Alias have the same value
-  RETRIEVE: 5,
-  READ: 5,
-  GET: 5,
-
-  UPDATE: 6,
-  //Alias
-  REMOVE: 7,
-  DELETE: 7
-};
-
-module.exports = events;
+},{}],4:[function(require,module,exports){
+module.exports={
+  "NONE": 0,
+  "REGISTER": 1,
+  "LOGIN": 2,
+  "LOGOUT": 3,
+  "CREATE": 4,
+  "RETRIEVE": 5,
+  "READ": 5,
+  "GET": 5,
+  "UPDATE": 6,
+  "REMOVE": 7,
+  "DELETE": 7
+}
 
 },{}],5:[function(require,module,exports){
-var messages = {};
+module.exports={
+  "SUCCESS": "Success!",
+  "FAILURE": "Failure!",
+  "FAILED": "Failed!",
+  "ERROR": "Error!",
+  "NOT_FOUND": "Not Found!",
+  "EXISTED": "Existed!",
+  "NOT_SPECIFIED": "Not Specified!",
+  "NOT_LOGIN": "Not Login!",
+  "REQUIRED": "Required!",
+  "UNKNOWN_ERROR": "Unknown Error!",
+  "USER_EXISTED": "User Existed!",
+  "USER_NOT_FOUND": "User Not Found!",
+  "USER_NOT_LOGIN": "User Not Login!",
+  "USERNAME_EXISTED": "Username Existed!",
+  "USER_NAME_EXISTED": "Username Existed!",
+  "DATABASE_ERROR": "Database Error!",
+  "PASSWORD_ERROR": "Password Error!",
+  "PASSWORD_NOT_SPECIFIED": "Password Not Specified!",
+  "FILE_NOT_FOUND": "File Not Found!",
+  "ADMIN_EXISTED": "Administrator Existed!",
+  "ADMINISTRATOR_EXISTED": "Administrator Existed!",
+  "ADMIN_NOT_FOUND": "Administrator Not Found!",
+  "ADMINISTRATOR_NOT_FOUND": "Administrator Not Found!",
+  "ADMIN_NOT_LOGIN": "Administrator Not Login!",
+  "ADMINISTRATOR_NOT_LOGIN": "Administrator Not Login!",
+  "MERCHANT_NOT_LOGIN": "Merchant Not Login!",
+  "UPDATE_FAILED": "Update Failed!",
+  "INPUT_INVALID": "Input Invalid!",
+  "NUMERIC_REQUIRED": "Numeric Required!",
+  "NAME_NOT_SPECIFIED": "Name Not Specified!",
+  "EMAIL_NOT_SPECIFIED": "Email Not Specified!",
+  "EMAIL_EXISTED": "Email Existed!",
+  "CATEGORY_NOT_FOUND": "Category Not Found!",
+  "PHONE_EXISTED": "Phone Existed!",
+  "NETWORK_ERROR": "Network Error!",
+  "APP_ID_ERROR": "Application ID Error!",
+  "APPLICATION_ID_ERROR": "Application ID Error!",
+  "MERCHANT_ID_ERROR": "Merchant ID Error!",
+  "SIGNATURE_NOT_MATCH": "Signature Not Match!"
+}
 
-var util = require('../util');
+},{}],6:[function(require,module,exports){
+module.exports={
+  "SUCCESS": "成功!",
+  "FAILURE": "失败!",
+  "FAILED": "失败了!",
+  "ERROR": "错误!",
+  "NOT_FOUND": "没有找到!",
+  "EXISTED": "已经存在!",
+  "NOT_SPECIFIED": "未指定!",
+  "NOT_LOGIN": "尚未登录!",
+  "REQUIRED": "必需有!",
+  "UNKNOWN_ERROR": "未知错误!",
+  "USER_EXISTED": "用户已经存在!",
+  "USER_NOT_FOUND": "用户未找到!",
+  "USER_NOT_LOGIN": "用户尚未登录!",
+  "USERNAME_EXISTED": "用户名已经存在!",
+  "USER_NAME_EXISTED": "用户名已经存在!",
+  "DATABASE_ERROR": "数据库错误!",
+  "PASSWORD_ERROR": "密码错误!",
+  "PASSWORD_NOT_SPECIFIED": "密码未指定!",
+  "FILE_NOT_FOUND": "文件未找到!",
+  "ADMIN_EXISTED": "管理员已经存在!",
+  "ADMINISTRATOR_EXISTED": "管理员已经存在!",
+  "ADMIN_NOT_FOUND": "管理员未找到!",
+  "ADMINISTRATOR_NOT_FOUND": "管理员未找到!",
+  "ADMIN_NOT_LOGIN": "管理员未登录!",
+  "ADMINISTRATOR_NOT_LOGIN": "管理员未登录!",
+  "MERCHANT_NOT_LOGIN": "商户未登录!",
+  "UPDATE_FAILED": "更新失败!",
+  "INPUT_INVALID": "输入无效!",
+  "NUMERIC_REQUIRED": "必须是数值!",
+  "NAME_NOT_SPECIFIED": "名字未指定!",
+  "EMAIL_NOT_SPECIFIED": "邮箱未指定!",
+  "EMAIL_EXISTED": "邮箱已经存在!",
+  "CATEGORY_NOT_FOUND": "分类未找到!",
+  "PHONE_EXISTED": "手机已存在!",
+  "NETWORK_ERROR": "网络错误!",
+  "APP_ID_ERROR": "应用ID错误!",
+  "APPLICATION_ID_ERROR": "应用ID错误!",
+  "MERCHANT_ID_ERROR": "商家ID错误!",
+  "SIGNATURE_NOT_MATCH": "签名不一致!"
+}
 
-util.defineString(messages, 'SUCCESS', "Success!");
-util.defineString(messages, 'FAILURE', "Failure!");
-util.defineString(messages, 'FAILED', "Failed!");
-util.defineString(messages, 'ERROR', "Error!");
-util.defineString(messages, 'NOT_FOUND', "Not Found!");
-util.defineString(messages, 'EXISTED', "Existed!");
-util.defineString(messages, 'NOT_SPECIFIED', "Not Specified!");
-util.defineString(messages, 'NOT_LOGIN', "Not Login!");
-util.defineString(messages, 'REQUIRED', "Required!");
-util.defineString(messages, 'UNKNOWN_ERROR', "Unknown Error!");
+},{}],7:[function(require,module,exports){
+module.exports={
+  "NONE": 0
+}
 
-util.defineString(messages, 'USER_EXISTED', "User Existed!");
-util.defineString(messages, 'USER_NOT_FOUND', "User Not Found!");
-util.defineString(messages, 'USER_NOT_LOGIN', "User Not Login!");
+},{}],8:[function(require,module,exports){
+module.exports={
+  "SUCCEEDED": 0,
+  "SUCCESS": 0,
+  "FAILURE": 1,
+  "FAILED": 1,
+  "ERROR": 1,
+  "INVALID": 2,
+  "MISMATCH": 3,
+  "REQUIRED": 4,
+  "NOT_FOUND": 5,
+  "EXISTED": 6,
+  "NOT_LOGIN": 7,
+  "EXPIRED": 8,
+  "BLOCKED": 9,
+  "EXCEEDED": 10,
+  "NOT_SPECIFIED": 11
+}
 
-util.defineString(messages, 'USERNAME_EXISTED', "Username Existed!");
-util.defineString(messages, 'DATABASE_ERROR', "Database Error!");
+},{}],9:[function(require,module,exports){
+var util = require("./util");
+var data = {};
 
-//Password errors
-util.defineString(messages, 'PASSWORD_ERROR', "Password Error!");
-util.defineString(messages, 'PASSWORD_NOT_SPECIFIED', "Password Not Specified!");
+var entities = require('./data/entities');
+var properties = require('./data/properties');
+var events = require('./data/events');
+var types = require('./data/types');
 
+var config = require('./config');
+if (config.data) {
+  entities = require(config.data.entities);
+  properties = require(config.data.properties);
+  events = require(config.data.events);
+  types = require(config.data.types);
+  errors = require(config.data.errors);
+}
 
-util.defineString(messages, 'FILE_NOT_FOUND', "File Not Found!");
-
-util.defineString(messages, 'ADMIN_EXISTED', "Administrator Existed!");
-util.defineString(messages, 'ADMINISTRATOR_EXISTED', "Administrator Existed!");
-
-util.defineString(messages, 'ADMIN_NOT_FOUND', "Administrator Not Found!");
-util.defineString(messages, 'ADMINISTRATOR_NOT_FOUND', "Administrator Not Found!");
-
-util.defineString(messages, 'ADMIN_NOT_LOGIN', "Administrator Not Login!");
-util.defineString(messages, 'ADMINISTRATOR_NOT_LOGIN', "Administrator Not Login!");
-
-
-util.defineString(messages, 'MERCHANT_NOT_LOGIN', "Merchant Not Login!");
-
-util.defineString(messages, 'UPDATE_FAILED', "Update Failed!");
-
-util.defineString(messages, 'INPUT_INVALID', "Input Invalid!");
-
-util.defineString(messages, 'NUMERIC_REQUIRED', "Numeric Required!");
-
-util.defineString(messages, 'NAME_NOT_SPECIFIED', "Name Not Specified!");
-
-util.defineString(messages, 'EMAIL_NOT_SPECIFIED', "Email Not Specified!");
-util.defineString(messages, 'EMAIL_EXISTED', "Email Existed!");
-
-
-util.defineString(messages, 'CATEGORY_NOT_FOUND', "Category Not Found!");
-util.defineString(messages, 'PHONE_EXISTED', "Phone Existed!");
-util.defineString(messages, 'NETWORK_ERROR', "Network Error!");
-
-
-
+for (errorName in errors) {
+  var item = errors[errorName];
+  util.define(data, errorName,
+    util.make(
+      entities[item[0]],
+      properties[item[1]],
+      events[item[2]],
+      types[item[3]]
+    )
+  );
+}
 
 
-module.exports = messages;
+module.exports = data;
 
-},{"../util":10}],6:[function(require,module,exports){
-module.exports = {
-  'en-US': require('./en-US'),
-  'zh-CN': require('./zh-CN')
+},{"./config":2,"./data/entities":3,"./data/events":4,"./data/properties":7,"./data/types":8,"./util":12}],10:[function(require,module,exports){
+var config = require('./config');
+
+
+//Intent to Include Languages files for browser
+
+var cn = require('./data/i18n/zh-CN');
+var en  = require('./data/i18n/en-US');
+
+var  data = {
+  'en-US': en,
+  'zh-CN': cn
 };
 
-},{"./en-US":5,"./zh-CN":7}],7:[function(require,module,exports){
-var messages = {};
-
-var util = require('../util');
-
-
-util.defineString(messages, 'SUCCESS', "成功!");
-util.defineString(messages, 'FAILURE', "失败!");
-util.defineString(messages, 'FAILED', "失败了!");
-util.defineString(messages, 'ERROR', "错误!");
-util.defineString(messages, 'NOT_FOUND', "没有找到!");
-util.defineString(messages, 'EXISTED', "已经存在!");
-util.defineString(messages, 'NOT_SPECIFIED', "未指定!");
-util.defineString(messages, 'NOT_LOGIN', "尚未登录!");
-util.defineString(messages, 'REQUIRED', "必需有!");
-util.defineString(messages, 'UNKNOWN_ERROR', "未知错误!");
-
-util.defineString(messages, 'USER_EXISTED', "用户已经存在!");
-util.defineString(messages, 'USER_NOT_FOUND', "用户未找到!");
-util.defineString(messages, 'USER_NOT_LOGIN', "用户尚未登录!");
-util.defineString(messages, 'USERNAME_EXISTED', "用户名已经存在!");
-util.defineString(messages, 'DATABASE_ERROR', "数据库错误!");
-
-//密码相关错误
-util.defineString(messages, 'PASSWORD_ERROR', "密码错误!");
-util.defineString(messages, 'PASSWORD_NOT_SPECIFIED', "密码未指定!");
+for(var k in config.i18n) {
+  data[k] = require(config.i18n[k]);
+}
 
 
-util.defineString(messages, 'FILE_NOT_FOUND', "文件未找到!");
+module.exports = data;
 
-util.defineString(messages, 'ADMIN_EXISTED', "管理员已经存在!");
-util.defineString(messages, 'ADMINISTRATOR_EXISTED', "管理员已经存在!");
-
-util.defineString(messages, 'ADMIN_NOT_FOUND', "管理员未找到!");
-util.defineString(messages, 'ADMINISTRATOR_NOT_FOUND', "管理员未找到!");
-
-util.defineString(messages, 'ADMIN_NOT_LOGIN', "管理员未登录!");
-util.defineString(messages, 'ADMINISTRATOR_NOT_LOGIN', "管理员未登录!");
-
-
-util.defineString(messages, 'MERCHANT_NOT_LOGIN', "商户未登录!");
-
-util.defineString(messages, 'UPDATE_FAILED', "更新失败!");
-
-util.defineString(messages, 'INPUT_INVALID', "输入无效!");
-
-util.defineString(messages, 'NUMERIC_REQUIRED', "必须是数值!");
-
-util.defineString(messages, 'NAME_NOT_SPECIFIED', "名字未指定!");
-
-util.defineString(messages, 'EMAIL_NOT_SPECIFIED', "邮箱未指定!");
-util.defineString(messages, 'EMAIL_EXISTED', "邮箱已经存在!");
-
-util.defineString(messages, 'CATEGORY_NOT_FOUND', "分类未找到!");
-util.defineString(messages, 'PHONE_EXISTED', "手机已存在!");
-util.defineString(messages, 'NETWORK_ERROR', "网络错误!");
-
-module.exports = messages;
-
-},{"../util":10}],8:[function(require,module,exports){
+},{"./config":2,"./data/i18n/en-US":5,"./data/i18n/zh-CN":6}],11:[function(require,module,exports){
 var util = require('./util');
 var errors = require('./errors');
+var config = require('./config');
+
 
 var webErrors = {
   version: '0.0.3',
   locale: 'en-US',
+  setConfig: function(data, i18n) {
+    config.set(data, i18n);
+  },
   setLocale: function (locale) {
     this.locale = locale;
     var newErrors = {};
@@ -392,55 +295,7 @@ webErrors.lang = util.lang;
 webErrors.errors = webErrors.setLocale(webErrors.locale);
 module.exports = webErrors;
 
-},{"./errors":3,"./util":10}],9:[function(require,module,exports){
-/**
- *  Error types that thrown or generated
- *
- *  The most commonly used types are listed
- *
- *  Total 8 bits
- *
- *  Users have the ability to extend the types for their own projects
- *
- */
-
-
-
-var types = {
-
-  //Basic error types
-  SUCCEEDED: 0,
-  SUCCESS: 0,
-
-  //Alias can be of the same value
-  FAILURE: 1,
-  FAILED: 1,
-  ERROR: 1,
-
-  //Validation error types
-  INVALID: 2,
-  MISMATCH: 3,
-  REQUIRED: 4,
-
-  //Existence related
-  NOT_FOUND: 5,
-  EXISTED: 6,
-
-  //Accessibility or authentication related
-  NOT_LOGIN: 7,
-  EXPIRED: 8,
-  BLOCKED: 9,
-
-  //Resources related
-  EXCEEDED: 10,
-
-  //Input related
-  NOT_SPECIFIED: 11
-
-};
-module.exports = types;
-
-},{}],10:[function(require,module,exports){
+},{"./config":2,"./errors":9,"./util":12}],12:[function(require,module,exports){
 var defaultLang = 'en-US';
 var util = {
   define: function(errors, key, value) {
@@ -545,4 +400,4 @@ var util = {
 };
 module.exports = util;
 
-},{"./errors":3,"./i18n":6}]},{},[1]);
+},{"./errors":9,"./i18n":10}]},{},[1]);

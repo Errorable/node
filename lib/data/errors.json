@@ -1,0 +1,238 @@
+{
+  "version": "0.0.1",
+  "SUCCESS": [
+    "GENERIC",
+    "NONE",
+    "NONE",
+    "SUCCESS"
+  ],
+  "FAILURE": [
+    "GENERIC",
+    "NONE",
+    "NONE",
+    "FAILURE"
+  ],
+  "FAILED": [
+    "GENERIC",
+    "NONE",
+    "NONE",
+    "FAILED"
+  ],
+  "ERROR": [
+    "GENERIC",
+    "NONE",
+    "NONE",
+    "ERROR"
+  ],
+  "NOT_FOUND": [
+    "GENERIC",
+    "NONE",
+    "NONE",
+    "NOT_FOUND"
+  ],
+  "EXISTED": [
+    "GENERIC",
+    "NONE",
+    "NONE",
+    "EXISTED"
+  ],
+  "NOT_SPECIFIED": [
+    "GENERIC",
+    "NONE",
+    "NONE",
+    "NOT_SPECIFIED"
+  ],
+  "NOT_LOGIN": [
+    "GENERIC",
+    "NONE",
+    "NONE",
+    "NOT_LOGIN"
+  ],
+  "REQUIRED": [
+    "GENERIC",
+    "NONE",
+    "NONE",
+    "REQUIRED"
+  ],
+  "UNKNOWN_ERROR": [
+    "UNKNOWN",
+    "NONE",
+    "NONE",
+    "ERROR"
+  ],
+  "USER_EXISTED": [
+    "USER",
+    "NONE",
+    "NONE",
+    "EXISTED"
+  ],
+  "USER_NOT_FOUND": [
+    "USER",
+    "NONE",
+    "NONE",
+    "NOT_FOUND"
+  ],
+  "USER_NOT_LOGIN": [
+    "USER",
+    "NONE",
+    "NONE",
+    "NOT_LOGIN"
+  ],
+  "USERNAME_EXISTED": [
+    "USER",
+    "properties.NAME",
+    "NONE",
+    "EXISTED"
+  ],
+  "USER_NAME_EXISTED": [
+    "USER",
+    "properties.NAME",
+    "NONE",
+    "EXISTED"
+  ],
+  "DATABASE_ERROR": [
+    "DATABASE",
+    "NONE",
+    "NONE",
+    "ERROR"
+  ],
+  "PASSWORD_ERROR": [
+    "PASSWORD",
+    "NONE",
+    "NONE",
+    "ERROR"
+  ],
+  "PASSWORD_NOT_SPECIFIED": [
+    "PASSWORD",
+    "NONE",
+    "NONE",
+    "NOT_SPECIFIED"
+  ],
+  "FILE_NOT_FOUND": [
+    "FILE",
+    "NONE",
+    "NONE",
+    "NOT_FOUND"
+  ],
+
+  "ADMIN_EXISTED": [
+    "ADMINISTRATOR",
+    "NONE",
+    "NONE",
+    "EXISTED"
+  ],
+  "ADMINISTRATOR_EXISTED": [
+    "ADMINISTRATOR",
+    "NONE",
+    "NONE",
+    "EXISTED"
+  ],
+  "ADMIN_NOT_FOUND": [
+    "ADMINISTRATOR",
+    "NONE",
+    "NONE",
+    "NOT_FOUND"
+  ],
+  "ADMINISTRATOR_NOT_FOUND": [
+    "ADMINISTRATOR",
+    "NONE",
+    "NONE",
+    "NOT_FOUND"
+  ],
+  "ADMIN_NOT_LOGIN": [
+    "ADMINISTRATOR",
+    "NONE",
+    "NONE",
+    "NOT_LOGIN"
+  ],
+  "ADMINISTRATOR_NOT_LOGIN": [
+    "ADMINISTRATOR",
+    "NONE",
+    "NONE",
+    "NOT_LOGIN"
+  ],
+  "MERCHANT_NOT_LOGIN": [
+    "MERCHANT",
+    "NONE",
+    "NONE",
+    "NOT_LOGIN"
+  ],
+  "UPDATE_FAILED": [
+    "GENERIC",
+    "NONE",
+    "UPDATE",
+    "FAILED"
+  ],
+  "INPUT_INVALID": [
+    "GENERIC",
+    "NONE",
+    "INPUT",
+    "INVALID"
+  ],
+  "NUMERIC_REQUIRED": [
+    "NUMERIC",
+    "NONE",
+    "NONE",
+    "REQUIRED"
+  ],
+  "NAME_NOT_SPECIFIED": [
+    "NAME",
+    "NONE",
+    "NONE",
+    "NOT_SPECIFIED"
+  ],
+  "EMAIL_NOT_SPECIFIED": [
+    "EMAIL",
+    "NONE",
+    "NONE",
+    "NOT_SPECIFIED"
+  ],
+  "EMAIL_EXISTED": [
+    "EMAIL",
+    "NONE",
+    "NONE",
+    "EXISTED"
+  ],
+  "CATEGORY_NOT_FOUND": [
+    "CATEGORY",
+    "NONE",
+    "NONE",
+    "NOT_FOUND"
+  ],
+  "PHONE_EXISTED": [
+    "PHONE",
+    "NONE",
+    "NONE",
+    "EXISTED"
+  ],
+  "NETWORK_ERROR": [
+    "NETWORK",
+    "NONE",
+    "NONE",
+    "ERROR"
+  ],
+  "APP_ID_ERROR": [
+    "APPLICATION",
+    "properties.ID",
+    "NONE",
+    "ERROR"
+  ],
+  "APPLICATION_ID_ERROR": [
+    "APPLICATION",
+    "properties.ID",
+    "NONE",
+    "ERROR"
+  ],
+  "MERCHANT_ID_ERROR": [
+    "MERCHANT",
+    "properties.ID",
+    "NONE",
+    "ERROR"
+  ],
+  "SIGNATURE_NOT_MATCH": [
+    "SIGNATURE",
+    "properties.NONE",
+    "NONE",
+    "NOT_MATCH"
+  ]
+}

@@ -2,6 +2,32 @@ var assert = require('assert'),
   webErrors = require('../index'),
   validator = require('validator');
 
+/*
+var config = require('../lib/config');
+
+
+var conf = {
+  data: {
+    entities: '../lib/data/entities',
+    properties: '../lib/data/properties',
+    types: '../lib/data/types',
+    events: '../lib/data/events',
+    errors: '../lib/data/errors'
+  },
+  i18n: {
+    "zh-CN": '../lib/data/i18n/zh-CN',
+    "en-US": '../lib/data/i18n/en-US'
+  }
+};
+
+config.set(conf.data, config.i18n);
+
+
+var entities = require(config.data.entities);
+var events = require(config.data.events);
+var types = require(config.data.types);
+*/
+
 describe('web Error Test', function () {
   it('should have basic info', function () {
     assert.equal(typeof webErrors.locale !== 'undefined', true);
