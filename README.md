@@ -7,7 +7,9 @@
 ## Benefits OR Aims
 
 >1.Unified Error Handling for servers and clients(browsers, android, ios)
+
 >2.Customizable error definitions
+
 >3.A standard general error standard for restful apis
 
 ## Install
