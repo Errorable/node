@@ -1,8 +1,14 @@
 #  [![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Dependency Status][daviddm-image]][daviddm-url]
 
 
-### Web errors is an easy way to define and use errors for restful apis.
+## Web errors provides an easy way to define and use errors for restful apis.
 
+
+## Benefits OR Aims
+
+  #1.Unified Error Handling for servers and clients(browsers, android, ios)
+  #2.Customizable error definitions
+  #3.A standard general error standard for restful apis
 
 ## Install
 
