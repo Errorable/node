@@ -22,7 +22,7 @@ global.webErrors = webErrors;
 module.exports = webErrors;
 
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{"./lib/index":11}],2:[function(require,module,exports){
+},{"./lib/index":12}],2:[function(require,module,exports){
 
 module.exports = {
   locale: "zh-CN",
@@ -70,6 +70,246 @@ module.exports={
 
 },{}],4:[function(require,module,exports){
 module.exports={
+  "version": "0.0.1",
+  "SUCCESS": [
+    "GENERIC",
+    "NONE",
+    "NONE",
+    "SUCCESS"
+  ],
+  "FAILURE": [
+    "GENERIC",
+    "NONE",
+    "NONE",
+    "FAILURE"
+  ],
+  "FAILED": [
+    "GENERIC",
+    "NONE",
+    "NONE",
+    "FAILED"
+  ],
+  "ERROR": [
+    "GENERIC",
+    "NONE",
+    "NONE",
+    "ERROR"
+  ],
+  "NOT_FOUND": [
+    "GENERIC",
+    "NONE",
+    "NONE",
+    "NOT_FOUND"
+  ],
+  "EXISTED": [
+    "GENERIC",
+    "NONE",
+    "NONE",
+    "EXISTED"
+  ],
+  "NOT_SPECIFIED": [
+    "GENERIC",
+    "NONE",
+    "NONE",
+    "NOT_SPECIFIED"
+  ],
+  "NOT_LOGIN": [
+    "GENERIC",
+    "NONE",
+    "NONE",
+    "NOT_LOGIN"
+  ],
+  "REQUIRED": [
+    "GENERIC",
+    "NONE",
+    "NONE",
+    "REQUIRED"
+  ],
+  "UNKNOWN_ERROR": [
+    "UNKNOWN",
+    "NONE",
+    "NONE",
+    "ERROR"
+  ],
+  "USER_EXISTED": [
+    "USER",
+    "NONE",
+    "NONE",
+    "EXISTED"
+  ],
+  "USER_NOT_FOUND": [
+    "USER",
+    "NONE",
+    "NONE",
+    "NOT_FOUND"
+  ],
+  "USER_NOT_LOGIN": [
+    "USER",
+    "NONE",
+    "NONE",
+    "NOT_LOGIN"
+  ],
+  "USERNAME_EXISTED": [
+    "USER",
+    "properties.NAME",
+    "NONE",
+    "EXISTED"
+  ],
+  "USER_NAME_EXISTED": [
+    "USER",
+    "properties.NAME",
+    "NONE",
+    "EXISTED"
+  ],
+  "DATABASE_ERROR": [
+    "DATABASE",
+    "NONE",
+    "NONE",
+    "ERROR"
+  ],
+  "PASSWORD_ERROR": [
+    "PASSWORD",
+    "NONE",
+    "NONE",
+    "ERROR"
+  ],
+  "PASSWORD_NOT_SPECIFIED": [
+    "PASSWORD",
+    "NONE",
+    "NONE",
+    "NOT_SPECIFIED"
+  ],
+  "FILE_NOT_FOUND": [
+    "FILE",
+    "NONE",
+    "NONE",
+    "NOT_FOUND"
+  ],
+
+  "ADMIN_EXISTED": [
+    "ADMINISTRATOR",
+    "NONE",
+    "NONE",
+    "EXISTED"
+  ],
+  "ADMINISTRATOR_EXISTED": [
+    "ADMINISTRATOR",
+    "NONE",
+    "NONE",
+    "EXISTED"
+  ],
+  "ADMIN_NOT_FOUND": [
+    "ADMINISTRATOR",
+    "NONE",
+    "NONE",
+    "NOT_FOUND"
+  ],
+  "ADMINISTRATOR_NOT_FOUND": [
+    "ADMINISTRATOR",
+    "NONE",
+    "NONE",
+    "NOT_FOUND"
+  ],
+  "ADMIN_NOT_LOGIN": [
+    "ADMINISTRATOR",
+    "NONE",
+    "NONE",
+    "NOT_LOGIN"
+  ],
+  "ADMINISTRATOR_NOT_LOGIN": [
+    "ADMINISTRATOR",
+    "NONE",
+    "NONE",
+    "NOT_LOGIN"
+  ],
+  "MERCHANT_NOT_LOGIN": [
+    "MERCHANT",
+    "NONE",
+    "NONE",
+    "NOT_LOGIN"
+  ],
+  "UPDATE_FAILED": [
+    "GENERIC",
+    "NONE",
+    "UPDATE",
+    "FAILED"
+  ],
+  "INPUT_INVALID": [
+    "GENERIC",
+    "NONE",
+    "INPUT",
+    "INVALID"
+  ],
+  "NUMERIC_REQUIRED": [
+    "NUMERIC",
+    "NONE",
+    "NONE",
+    "REQUIRED"
+  ],
+  "NAME_NOT_SPECIFIED": [
+    "NAME",
+    "NONE",
+    "NONE",
+    "NOT_SPECIFIED"
+  ],
+  "EMAIL_NOT_SPECIFIED": [
+    "EMAIL",
+    "NONE",
+    "NONE",
+    "NOT_SPECIFIED"
+  ],
+  "EMAIL_EXISTED": [
+    "EMAIL",
+    "NONE",
+    "NONE",
+    "EXISTED"
+  ],
+  "CATEGORY_NOT_FOUND": [
+    "CATEGORY",
+    "NONE",
+    "NONE",
+    "NOT_FOUND"
+  ],
+  "PHONE_EXISTED": [
+    "PHONE",
+    "NONE",
+    "NONE",
+    "EXISTED"
+  ],
+  "NETWORK_ERROR": [
+    "NETWORK",
+    "NONE",
+    "NONE",
+    "ERROR"
+  ],
+  "APP_ID_ERROR": [
+    "APPLICATION",
+    "ID",
+    "NONE",
+    "ERROR"
+  ],
+  "APPLICATION_ID_ERROR": [
+    "APPLICATION",
+    "ID",
+    "NONE",
+    "ERROR"
+  ],
+  "MERCHANT_ID_ERROR": [
+    "MERCHANT",
+    "ID",
+    "NONE",
+    "ERROR"
+  ],
+  "SIGNATURE_NOT_MATCH": [
+    "SIGNATURE",
+    "NONE",
+    "NONE",
+    "NOT_MATCH"
+  ]
+}
+
+},{}],5:[function(require,module,exports){
+module.exports={
   "NONE": 0,
   "REGISTER": 1,
   "LOGIN": 2,
@@ -83,7 +323,7 @@ module.exports={
   "DELETE": 7
 }
 
-},{}],5:[function(require,module,exports){
+},{}],6:[function(require,module,exports){
 module.exports={
   "SUCCESS": "Success!",
   "FAILURE": "Failure!",
@@ -126,7 +366,7 @@ module.exports={
   "SIGNATURE_NOT_MATCH": "Signature Not Match!"
 }
 
-},{}],6:[function(require,module,exports){
+},{}],7:[function(require,module,exports){
 module.exports={
   "SUCCESS": "成功!",
   "FAILURE": "失败!",
@@ -169,12 +409,13 @@ module.exports={
   "SIGNATURE_NOT_MATCH": "签名不一致!"
 }
 
-},{}],7:[function(require,module,exports){
+},{}],8:[function(require,module,exports){
 module.exports={
-  "NONE": 0
+  "NONE": 0,
+  "ID": 1
 }
 
-},{}],8:[function(require,module,exports){
+},{}],9:[function(require,module,exports){
 module.exports={
   "SUCCEEDED": 0,
   "SUCCESS": 0,
@@ -193,7 +434,7 @@ module.exports={
   "NOT_SPECIFIED": 11
 }
 
-},{}],9:[function(require,module,exports){
+},{}],10:[function(require,module,exports){
 var util = require("./util");
 var data = {};
 
@@ -201,6 +442,7 @@ var entities = require('./data/entities');
 var properties = require('./data/properties');
 var events = require('./data/events');
 var types = require('./data/types');
+var errors = require('./data/errors');
 
 var config = require('./config');
 if (config.data) {
@@ -226,7 +468,7 @@ for (errorName in errors) {
 
 module.exports = data;
 
-},{"./config":2,"./data/entities":3,"./data/events":4,"./data/properties":7,"./data/types":8,"./util":12}],10:[function(require,module,exports){
+},{"./config":2,"./data/entities":3,"./data/errors":4,"./data/events":5,"./data/properties":8,"./data/types":9,"./util":13}],11:[function(require,module,exports){
 var config = require('./config');
 
 
@@ -247,7 +489,7 @@ for(var k in config.i18n) {
 
 module.exports = data;
 
-},{"./config":2,"./data/i18n/en-US":5,"./data/i18n/zh-CN":6}],11:[function(require,module,exports){
+},{"./config":2,"./data/i18n/en-US":6,"./data/i18n/zh-CN":7}],12:[function(require,module,exports){
 var util = require('./util');
 var errors = require('./errors');
 var config = require('./config');
@@ -295,7 +537,7 @@ webErrors.lang = util.lang;
 webErrors.errors = webErrors.setLocale(webErrors.locale);
 module.exports = webErrors;
 
-},{"./config":2,"./errors":9,"./util":12}],12:[function(require,module,exports){
+},{"./config":2,"./errors":10,"./util":13}],13:[function(require,module,exports){
 var defaultLang = 'en-US';
 var util = {
   define: function(errors, key, value) {
@@ -400,4 +642,4 @@ var util = {
 };
 module.exports = util;
 
-},{"./errors":9,"./i18n":10}]},{},[1]);
+},{"./errors":10,"./i18n":11}]},{},[1]);

@@ -213,25 +213,25 @@
   ],
   "APP_ID_ERROR": [
     "APPLICATION",
-    "properties.ID",
+    "ID",
     "NONE",
     "ERROR"
   ],
   "APPLICATION_ID_ERROR": [
     "APPLICATION",
-    "properties.ID",
+    "ID",
     "NONE",
     "ERROR"
   ],
   "MERCHANT_ID_ERROR": [
     "MERCHANT",
-    "properties.ID",
+    "ID",
     "NONE",
     "ERROR"
   ],
   "SIGNATURE_NOT_MATCH": [
     "SIGNATURE",
-    "properties.NONE",
+    "NONE",
     "NONE",
     "NOT_MATCH"
   ]
